@@ -1,20 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+
+import CoursesList from '../pages/courses/CoursesList'
+import CourseDetail from '../pages/courses/CourseDetail.vue'
+import CourseRegistration from '../pages/courses/CourseRegistration.vue'
+import ContactCourse from '../pages/requests/ContactCourse.vue'
+import RequestReceived from '../pages/requests/RequestReceived.vue'
+import NotFound from '../pages/NotFound.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  { path: '/', redirect: '/courses' },
+  { path: '/courses', component: CoursesList },
+  { path: '/courses/:id', component: CourseDetail, children:[
+    { path: 'contact', component: ContactCourse } // /courses/c1/contact
+  ] },
+  { path: '/register', component: CourseRegistration },
+  { path: '/requests', component: RequestReceived },
+  { path: '/:notFound(.*)', component: NotFound },
 ]
 
 const router = createRouter({
