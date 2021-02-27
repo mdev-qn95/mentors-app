@@ -1,3 +1,3 @@
 <template>
-    REQUESTS
+    Yêu cầu
 </template>

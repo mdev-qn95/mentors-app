@@ -3,8 +3,8 @@
         <nav>
             <h1><router-link to="/">FAC</router-link></h1>
             <ul>
-                <li><router-link to="/courses">All Courses</router-link></li>
-                <li><router-link to="/requests">Requests</router-link></li>
+                <li><router-link to="/courses">Tất cả các khóa học</router-link></li>
+                <li><router-link to="/requests">Yêu cầu</router-link></li>
             </ul>
         </nav>
     </header>

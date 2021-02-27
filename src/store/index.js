@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 
+import coursesModule from './modules/courses/index.js'
 export default createStore({
   state: {
   },
@@ -8,5 +9,6 @@ export default createStore({
   actions: {
   },
   modules: {
+    courses: coursesModule
   }
 })

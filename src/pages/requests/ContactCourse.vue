@@ -1,3 +1,3 @@
 <template>
-    CONTACT A COURSE
+    Liên hệ khóa học
 </template>
