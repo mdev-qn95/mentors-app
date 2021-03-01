@@ -1,5 +1,7 @@
 <template>
-  <section>Bộ lọc</section>
+  <section>
+    <mentor-filter @change-filter="setFilters"></mentor-filter>
+  </section>
   <section>
     <base-card>
       <div class="controls">
@@ -24,16 +26,44 @@
 
 <script>
 import MentorItem from "../../components/mentors/MentorItem";
+import MentorFilter from "../../components/mentors/MentorFilter";
 export default {
   components: {
     MentorItem,
+    MentorFilter,
+  },
+  data() {
+    return {
+      activeFilters: {
+        frontend: true,
+        backend: true,
+        career: true,
+      },
+    };
   },
   computed: {
     filteredMentors() {
-      return this.$store.getters["mentors/mentors"];
+      const mentors = this.$store.getters["mentors/mentors"];
+      return mentors.filter(mentor => {
+        if (this.activeFilters.frontend && mentor.areas.includes("frontend")) {
+          return true;
+        }
+        if (this.activeFilters.backend && mentor.areas.includes("backend")) {
+          return true;
+        }
+        if (this.activeFilters.career && mentor.areas.includes("career")) {
+          return true;
+        }
+        return false;
+      });
     },
     hasMentors() {
       return this.$store.getters["mentors/hasMentors"];
+    },
+  },
+  methods: {
+    setFilters(updatedFilters) {
+      this.activeFilters = updatedFilters;
     },
   },
 };
