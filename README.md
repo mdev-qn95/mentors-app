@@ -1,4 +1,4 @@
-# courses-app
+# mentors-app
 
 ## Project setup
 ```

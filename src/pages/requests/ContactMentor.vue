@@ -1,3 +1,3 @@
 <template>
-    Đăng ký
+    Contact
 </template>

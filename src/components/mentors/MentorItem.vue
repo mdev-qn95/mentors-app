@@ -3,11 +3,11 @@
     <h3>{{ fullName }}</h3>
     <h4>${{ rate }}/hour</h4>
     <div>
-      <span v-for="area in areas" :key="area">{{ area }}</span>
+      <base-badge v-for="area in areas" :key="area" :type="area" :title="area"></base-badge>
     </div>
     <div class="actions">
-      <router-link :to="courseContactLink">Contact</router-link>
-      <router-link :to="courseDetailsLink">View Details</router-link>
+      <base-button link :to="mentorContactLink" mode="outline">Contact</base-button>
+      <base-button link :to="mentorDetailsLink">View Details</base-button>
     </div>
   </li>
 </template>
@@ -19,10 +19,10 @@ export default {
     fullName() {
       return this.firstName + " " + this.lastName;
     },
-    courseContactLink() {
-      return this.$route.path + "/" + this.id + "/contact"; // /courses/c1/contact
+    mentorContactLink() {
+      return this.$route.path + "/" + this.id + "/contact"; // /mentors/m1/contact
     },
-    courseDetailsLink() {
+    mentorDetailsLink() {
       return this.$route.path + "/" + this.id;
     },
   },

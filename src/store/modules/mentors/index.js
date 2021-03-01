@@ -6,9 +6,9 @@ export default {
     namespaced: true,
     state() {
         return {
-            courses: [
+            mentors: [
                 {
-                    id: 'c1',
+                    id: 'm1',
                     firstName: 'Thái',
                     lastName: 'Văn Phú',
                     areas: ['frontend', 'backend', 'career'],
@@ -17,7 +17,7 @@ export default {
                     hourlyRate: 30
                 },
                 {
-                    id: 'c2',
+                    id: 'm2',
                     firstName: 'Thái',
                     lastName: 'Bảo',
                     areas: ['frontend', 'career'],

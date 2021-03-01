@@ -1,10 +1,10 @@
 <template>
     <header>
         <nav>
-            <h1><router-link to="/">FAC</router-link></h1>
+            <h1><router-link to="/">FAM</router-link></h1>
             <ul>
-                <li><router-link to="/courses">Tất cả các khóa học</router-link></li>
-                <li><router-link to="/requests">Yêu cầu</router-link></li>
+                <li><router-link to="/mentors">List Of Mentors</router-link></li>
+                <li><router-link to="/requests">Requests</router-link></li>
             </ul>
         </nav>
     </header>
@@ -14,7 +14,7 @@
 header {
   width: 100%;
   height: 5rem;
-  background-color: #0984e3;
+  background-color: #039be5;
   display: flex;
   justify-content: center;
   align-items: center;

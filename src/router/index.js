@@ -1,19 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import CoursesList from '../pages/courses/CoursesList'
-import CourseDetail from '../pages/courses/CourseDetail.vue'
-import CourseRegistration from '../pages/courses/CourseRegistration.vue'
-import ContactCourse from '../pages/requests/ContactCourse.vue'
+import ListOfMentors from '../pages/mentors/ListOfMentors'
+import MentorDetail from '../pages/mentors/MentorDetail.vue'
+import MentorRegistration from '../pages/mentors/MentorRegistration.vue'
+import ContactMentor from '../pages/requests/ContactMentor.vue'
 import RequestReceived from '../pages/requests/RequestReceived.vue'
 import NotFound from '../pages/NotFound.vue'
 
 const routes = [
-  { path: '/', redirect: '/courses' },
-  { path: '/courses', component: CoursesList },
-  { path: '/courses/:id', component: CourseDetail, children:[
-    { path: 'contact', component: ContactCourse } // /courses/c1/contact
+  { path: '/', redirect: '/mentors' },
+  { path: '/mentors', component: ListOfMentors },
+  { path: '/mentors/:id', component: MentorDetail, children:[
+    { path: 'contact', component: ContactMentor } // /mentors/m1/contact
   ] },
-  { path: '/register', component: CourseRegistration },
+  { path: '/register', component: MentorRegistration },
   { path: '/requests', component: RequestReceived },
   { path: '/:notFound(.*)', component: NotFound },
 ]
