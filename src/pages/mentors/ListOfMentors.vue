@@ -5,7 +5,7 @@
   <section>
     <base-card>
       <div class="controls">
-        <base-button link mode="outline">Refresh</base-button>
+        <base-button mode="outline">Refresh</base-button>
         <base-button link to="/register">Register as Mentor</base-button>
       </div>
       <ul v-if="hasMentors">

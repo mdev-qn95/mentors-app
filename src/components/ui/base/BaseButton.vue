@@ -40,7 +40,8 @@ button, a{
     border-radius: 30px;
     margin-right: 0.5rem;
     display: inline-block;
-    /* 0984e3 */
+    font-family: "Quicksand", sans-serif;
+    font-size: 16.7px;
 }
 a:hover,
 a:active,

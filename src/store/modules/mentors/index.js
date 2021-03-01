@@ -9,20 +9,20 @@ export default {
             mentors: [
                 {
                     id: 'm1',
-                    firstName: 'Thái',
-                    lastName: 'Văn Phú',
+                    firstName: 'Thai',
+                    lastName: 'Van Phu',
                     areas: ['frontend', 'backend', 'career'],
                     description:
-                        "I'm Thái Văn Phú and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
-                    hourlyRate: 30
+                        "I'm Thai Van Phu and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
+                    hourlyRate: 45
                 },
                 {
                     id: 'm2',
-                    firstName: 'Thái',
-                    lastName: 'Bảo',
+                    firstName: 'Le',
+                    lastName: 'Ngoc Tuan',
                     areas: ['frontend', 'career'],
                     description:
-                        'I am Thái Bảo and as a senior developer in a big tech company, I can help you get your first job or progress in your current role.',
+                        'I am Thai Bao and as a senior developer in a big tech company, I can help you get your first job or progress in your current role.',
                     hourlyRate: 30
                 }
             ]
