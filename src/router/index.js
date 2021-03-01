@@ -10,9 +10,11 @@ import NotFound from '../pages/NotFound.vue'
 const routes = [
   { path: '/', redirect: '/mentors' },
   { path: '/mentors', component: ListOfMentors },
-  { path: '/mentors/:id', component: MentorDetail, children:[
-    { path: 'contact', component: ContactMentor } // /mentors/m1/contact
-  ] },
+  {
+    path: '/mentors/:id', component: MentorDetail, props: true, children: [
+      { path: 'contact', component: ContactMentor } // /mentors/m1/contact
+    ]
+  },
   { path: '/register', component: MentorRegistration },
   { path: '/requests', component: RequestReceived },
   { path: '/:notFound(.*)', component: NotFound },
