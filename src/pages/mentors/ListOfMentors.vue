@@ -6,7 +6,7 @@
     <base-card>
       <div class="controls">
         <base-button mode="outline">Refresh</base-button>
-        <base-button link to="/register">Register as Mentor</base-button>
+        <base-button v-if="!isMentor" link to="/register">Register as Mentor</base-button>
       </div>
       <ul v-if="hasMentors">
         <mentor-item
@@ -42,9 +42,12 @@ export default {
     };
   },
   computed: {
+    isMentor() {
+      return this.$store.getters["mentors/isMentor"];
+    },
     filteredMentors() {
       const mentors = this.$store.getters["mentors/mentors"];
-      return mentors.filter(mentor => {
+      return mentors.filter((mentor) => {
         if (this.activeFilters.frontend && mentor.areas.includes("frontend")) {
           return true;
         }

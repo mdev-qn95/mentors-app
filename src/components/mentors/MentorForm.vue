@@ -2,32 +2,36 @@
   <form @submit.prevent="submitForm">
     <div class="form-control">
       <label for="firstname">Firstname</label>
-      <input type="text" id="firstname" v-model.trim="firstName"/>
+      <input type="text" id="firstname" v-model.trim="firstName" />
     </div>
     <div class="form-control">
       <label for="lastname">Lastname</label>
-      <input type="text" id="lastname" v-model.trim="lastName"/>
+      <input type="text" id="lastname" v-model.trim="lastName" />
     </div>
     <div class="form-control">
       <label for="descriptions">Description</label>
-      <textarea id="descriptions" rows="5" v-model.trim="descriptions"></textarea>
+      <textarea
+        id="descriptions"
+        rows="5"
+        v-model.trim="descriptions"
+      ></textarea>
     </div>
     <div class="form-control">
       <label for="rate">Hourly Rate</label>
-      <input type="number" id="rate" v-model.number="rate"/>
+      <input type="number" id="rate" v-model.number="rate" />
     </div>
     <div class="form-control">
       <h3>Areas of Expertise</h3>
       <div>
-        <input type="checkbox" id="frontend" value="frontend" v-model="areas"/>
+        <input type="checkbox" id="frontend" value="frontend" v-model="areas" />
         <label for="frontend">Frontend Development</label>
       </div>
       <div>
-        <input type="checkbox" id="backend" value="backend" v-model="areas"/>
+        <input type="checkbox" id="backend" value="backend" v-model="areas" />
         <label for="backend">Backend Development</label>
       </div>
       <div>
-        <input type="checkbox" id="career" value="career" v-model="areas"/>
+        <input type="checkbox" id="career" value="career" v-model="areas" />
         <label for="career">Career Advisory</label>
       </div>
     </div>
@@ -36,28 +40,29 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            firstnName: '',
-            lastName: '',
-            descriptions: '',
-            rate: null,
-            areas: []
-        }
+  emits: ["save-data"],
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      descriptions: "",
+      rate: null,
+      areas: [],
+    };
+  },
+  methods: {
+    submitForm() {
+      const formData = {
+        first: this.firstName,
+        last: this.lastName,
+        desc: this.descriptions,
+        rate: this.rate,
+        areas: this.areas,
+      };
+      this.$emit("save-data", formData);
     },
-    methods: {
-        submitForm() {
-            const formData = {
-                first: this.firstnName,
-                last: this.lastName,
-                desc: this.descriptions,
-                rate: this.rate,
-                areas: this.areas
-            }
-            console.log(formData);
-        }
-    }
-}
+  },
+};
 </script>
 <style scoped>
 .form-control {
