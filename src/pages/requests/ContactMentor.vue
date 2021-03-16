@@ -40,7 +40,7 @@ export default {
       this.$store.dispatch("requests/contactMentor", {
         email: this.email,
         message: this.message,
-        coachId: this.$route.params.id,
+        mentorId: this.$route.params.id,
       });
       this.$router.replace("/mentors");
     },

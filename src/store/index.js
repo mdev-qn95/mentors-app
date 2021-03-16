@@ -1,7 +1,8 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 
-import mentorsModule from './modules/mentors/index.js'
-import requestsModule from './modules/requests/index.js'
+import mentorsModule from './modules/mentors/index.js';
+import requestsModule from './modules/requests/index.js';
+
 const store = createStore({
   modules: {
     mentors: mentorsModule,
@@ -10,12 +11,13 @@ const store = createStore({
   state() {
     return {
       userId: 'm3'
-    }
+    };
   },
   getters: {
     userId(state) {
-      return state.userId
+      return state.userId;
     }
   }
-})
+});
+
 export default store;
